@@ -1,9 +1,11 @@
-from flask import Flask, request, jsonify
+from crypt import methods
+from flask import Flask, render_template, request, jsonify
 from num2words import num2words
+import os
 
 app = Flask(__name__)
 
-@app.route('/num2text/', methods=['POST'])
+@app.route('/num2text', methods=['POST',])
 def num_text():
     json_data = request.get_json()
     if 'number' not in json_data:
@@ -12,9 +14,9 @@ def num_text():
     text = num2words(number, lang='ru')
     return jsonify(str=text)
 
-@app.route('/testget', methods=['GET'])
-def test_get():
-    return "hi i'm simple service"
+@app.route('/', methods=['GET',])
+def req_get():
+    return render_template('index.html')
 
 if __name__=='__main__':
-    app.run('0,0,0,0', port=9991)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
