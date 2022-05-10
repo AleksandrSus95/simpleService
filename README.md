@@ -13,3 +13,7 @@
 - flask run --port=3000
 или
 - python -m flask run --host=0.0.0.0 --port=3000
+
+Чтобы собрать контейнер
+- в корне запустить терминал из корня проекта
+- docker build -t tagname:version -f Dockerfile .

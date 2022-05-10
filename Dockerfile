@@ -10,4 +10,4 @@ RUN pip install num2words
 
 EXPOSE 3000
 
-ENTRYPOINT ["python", "./testservice.py"]
+ENTRYPOINT ["python", "-m", "flask", "run", "--port=3000", "--host=0.0.0.0"]
