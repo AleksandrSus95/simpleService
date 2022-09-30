@@ -15,4 +15,7 @@
 - python -m flask run --host=0.0.0.0 --port=3000
 
 Чтобы собрать контейнер
-- docker build -t tagname:version -f Dockerfile .
+- docker build -t tagname:version -f Dockerfile .  
+
+Чтобы запустить контейнер
+docker run -p 3000:3000 <image_name>:<tag> 

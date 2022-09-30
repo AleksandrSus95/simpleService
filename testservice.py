@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/num2text', methods=['POST',])
+@app.route('/numtotext', methods=['POST',])
 def num_text():
     json_data = request.get_json()
     if 'number' not in json_data:
